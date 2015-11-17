@@ -3,8 +3,8 @@
  */
 public class Node {
 
-    public Integer data;
-    public Node next;
+    private Integer data;
+    private Node next;
 
     public Node(Integer theData, Node theNext) {
         next = theNext;

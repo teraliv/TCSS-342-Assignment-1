@@ -3,7 +3,7 @@
  */
 public class MyLinkedList {
 
-    public Node head;
+    private Node head;
     private int length;
 
     public MyLinkedList() {
@@ -14,23 +14,25 @@ public class MyLinkedList {
     public void add(Integer newData) {
 
         // if my list is empty
-        if (head.next == null) {
+        if (head.getNext() == null) {
+
             //assign my first node
-            head.next = new Node(newData, null);
+            head.setNext(new Node(newData, null));
             length++;
 
         } else {
             // if the list is not empty, the last element needs to be find
-            Node current = head.next;
+            Node current = head.getNext();
             
             // loop until the last node is foud
-            while (current.next != null) {
+            while (current.getNext() != null) {
                 // move current to the next node
-                current = current.next;
+                current = current.getNext();
             }
 
             // set the next element to a new node
-            current.next = new Node(newData, null);
+            //current.next = new Node(newData, null);
+            current.setNext(new Node(newData, null));
             length++;
         }
 
@@ -40,12 +42,16 @@ public class MyLinkedList {
         return length;
     }
 
+    public Node getHead() {
+        return head;
+    }
+
     public void printList() {
-        Node current = head.next;
+        Node current = head.getNext();
 
         while (current != null) {
-            System.out.printf("%d \n", current.data);
-            current = current.next;
+            System.out.printf("%d \n", current.getData());
+            current = current.getNext();
         }
     }
 }
