@@ -1,16 +1,40 @@
-/**
- * Created by aterikov on 10/20/15.
+/*
+ *  LinkedList.java
+ *  TCSS 342 - Autumn 2015
+ *
+ *  Assignment 1 - Implementing Linked List and sort it using Buuble & Shell Sort.
+ *  Alex Terikov (teraliv@uw.edu)
+ *  10/20/15
  */
-public class MyLinkedList {
 
+
+/**
+ * Creates a linked list.
+ *
+ * @author Alex Terikov (teraliv@uw.edu)
+ * @version 10/20/15
+ */
+public class LinkedList {
+
+    // The first node of a linke list.
     private Node head;
+
+    // The length of a linked list.
     private int length;
 
-    public MyLinkedList() {
+    /**
+     * Constructs a new linked list with a dummy node.
+     */
+    public LinkedList() {
         head = new Node(null, null);
         length = 0;
     }
 
+    /**
+     * Adds a new node to the tail of a linked list.
+     *
+     * @param newData the data to be stored in the node.
+     */
     public void add(Integer newData) {
 
         // if my list is empty
@@ -38,14 +62,27 @@ public class MyLinkedList {
 
     }
 
+    /**
+     * Gets the size of a linked list.
+     *
+     * @return the size of a linked list.
+     */
     public int size() {
         return length;
     }
 
+    /**
+     * Gets a reference to the first node.
+     *
+     * @return first node.
+     */
     public Node getHead() {
         return head;
     }
 
+    /**
+     * Prints linked list.
+     */
     public void printList() {
         Node current = head.getNext();
 
